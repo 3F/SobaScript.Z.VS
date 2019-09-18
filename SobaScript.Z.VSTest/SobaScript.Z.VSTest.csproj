@@ -15,9 +15,4 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SobaScript.Z.VS\SobaScript.Z.VS.csproj" />
-    <ProjectReference Include="..\SobaScript\SobaScript.csproj" />
-  </ItemGroup>
-
 </Project>
