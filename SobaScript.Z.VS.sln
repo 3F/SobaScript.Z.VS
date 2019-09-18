@@ -40,8 +40,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SobaScript.Mapper", "SobaSc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SobaScript.MapperTest", "SobaScript.Mapper\SobaScript.MapperTest\SobaScript.MapperTest.csproj", "{A5B92B3B-B72D-426C-8C3D-9A41DF986357}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SobaScript", "SobaScript", "{A96CE2AF-F773-4C0A-8680-4D0ED79F53A1}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SobaScript", "SobaScript.Mapper\SobaScript\SobaScript\SobaScript.csproj", "{8CFFF022-160C-41C0-A9E2-1646338A91D9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SobaScriptTest", "SobaScript.Mapper\SobaScript\SobaScriptTest\SobaScriptTest.csproj", "{6FD41D29-2924-432E-B34B-C6DC093FF595}"
@@ -65,6 +63,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{7D1F1A61
 	ProjectSection(SolutionItems) = preProject
 		SobaScript.Mapper\tools\gnt.bat = SobaScript.Mapper\tools\gnt.bat
 		SobaScript.Mapper\tools\hMSBuild.bat = SobaScript.Mapper\tools\hMSBuild.bat
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{0DB0EE5A-F420-414A-B6F7-25C9DE9BCD01}"
+	ProjectSection(SolutionItems) = preProject
+		tools\gnt.bat = tools\gnt.bat
+		tools\hMSBuild.bat = tools\hMSBuild.bat
 	EndProjectSection
 EndProject
 Global
@@ -349,7 +353,6 @@ Global
 		{09974DE1-98BF-4D9B-81EF-8F41E86861B8} = {E325CBC0-873B-45F5-A8D3-7BD570CDA04B}
 		{069A8DEC-D613-4051-BDD4-DD3F9A2C2397} = {8B4B7D7C-313A-45CE-8004-70047FDD554B}
 		{A5B92B3B-B72D-426C-8C3D-9A41DF986357} = {8B4B7D7C-313A-45CE-8004-70047FDD554B}
-		{A96CE2AF-F773-4C0A-8680-4D0ED79F53A1} = {8B4B7D7C-313A-45CE-8004-70047FDD554B}
 		{8CFFF022-160C-41C0-A9E2-1646338A91D9} = {8B4B7D7C-313A-45CE-8004-70047FDD554B}
 		{6FD41D29-2924-432E-B34B-C6DC093FF595} = {8B4B7D7C-313A-45CE-8004-70047FDD554B}
 		{870A24A8-1392-4444-82AE-AD1CB7B20693} = {8B4B7D7C-313A-45CE-8004-70047FDD554B}

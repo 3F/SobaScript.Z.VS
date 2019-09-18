@@ -1,7 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Version>0.0.1.0</Version>
+    <Version>1.14.0</Version>
+    <BuildInfoVSSBE></BuildInfoVSSBE>
     <!-- <AssemblyVersion>0.0.1.0</AssemblyVersion> -->
     <!-- <FileVersion>0.0.1.0</FileVersion> -->
   </PropertyGroup>
@@ -13,10 +14,108 @@
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright>Copyright (c) 2014-2019  Denis Kuzmin &lt; x-3F@outlook.com &gt; GitHub/3F</Copyright>
-    <Title>Core components for SobaScript</Title>
+    <Title>Visual Studio components for SobaScript</Title>
     <Description>Components for work with Visual Studio through SobaScript -- Extensible Modular Scripting Programming Language
     
+    https://github.com/3F/SobaScript
+
+    Provides at least the following:
+
+    * DTEComponent
+
+    For work with [EnvDTE](http://msdn.microsoft.com/en-us/library/EnvDTE.aspx)
+
+    ```
+    #[DTE exec: Build.SolutionPlatforms(x86)] 
+    #[DTE exec: Build.SolutionConfigurations(Debug_Exclude_Plugins_All)]
+    #[DTE exec: Build.Cancel]
+    ...
+    ```
+
+    ```
+    string #[DTE events.LastCommand.Guid]
+    object #[DTE events.LastCommand.CustomOut]
+    object #[DTE events.LastCommand.CustomIn]
+    ```
+
+    * OwpComponent
+
+    For work with Output Window Pane.
+
+    ```
+    #[OWP item("My Item").activate = true]
+    #[OWP item("My Item").write(true): mixed data]
+    #[OWP item("My Item").clear = true]
+    #[OWP item("My Item").delete = true]
+    ```
+
+    ```
+    string #[OWP out.Warnings]
+    integer #[OWP out.Warnings.Count]
+
+    List #[OWP out.Warnings.Codes]
+    C4702,4505,..
+    ```
+
+    ```
+    string #[OWP out.Errors]
+    Integer #[OWP out.Errors.Count]
+
+    List #[OWP out.Errors.Codes]
+    C4702,C4505,..
+    ```
+
+    * BuildComponent 
+
+    Managing of build process at runtime.
+
+
+    ```
+    #[(#[Build projects.find("ZenLib").IsBuildable]) {
+        ...
+    }]
+
+    #[Build projects.find("ZenLib").IsBuildable = false]
+    ```
+
+    ```
+    #[(#[Build projects.find("ZenLib").IsDeployable]) {
+        ...
+    }]
+
+    #[Build projects.find("ZenLib").IsDeployable= false]
+    ```
+
+    ```
+    enum #[Build type]
+    void cancel = boolean
+    ```
+
+    ```
+    #[Build solution.current.First.path]
+    #[Build solution.path("D:\tmp\app.sln").First.guid]
+    ```
+
+    ```
+    List #[Build solution.path(string sln).GuidList]
+    {73919171-44B6-4536-B892-F1FCA653887C},{4262A1DC-768F-43CC-85F5-A4ED9CD034CC},
+    {A7BF1F9C-F18D-423E-9354-859DC3CFAFD4}, ...
+    ```
+
+    ```
+    #[Build solution.path("D:\tmp\vsSolutionBuildEvent.sln")
+            .projectBy("{97F0E2FF-42DB-4506-856D-8694DD99F827}").name]
+    ```
+
     https://github.com/3F/SobaScript.Z.VS
+
+    =======================================
+    gnt /p:ngpackages="SobaScript.Z.VS/$(Version)"
+    ================== https://github.com/3F/GetNuTool
+
+    Build info:
+
+    $(BuildInfoVSSBE)
     </Description>
     <PackageOwners>reg</PackageOwners>
     <PackageProjectUrl>https://github.com/3F/SobaScript.Z.VS</PackageProjectUrl>
@@ -48,6 +147,27 @@
     <None Include="..\Readme.md">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
+    </None>
+    <None Include="..\changelog.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\.version">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\tools\hMSBuild.bat">
+      <Visible>false</Visible>
+      <Pack>True</Pack>
+      <PackagePath>tools\</PackagePath>
+    </None>
+    <None Include="..\tools\gnt.bat">
+      <Visible>false</Visible>
+      <Pack>True</Pack>
+      <PackagePath>tools\</PackagePath>
     </None>
   </ItemGroup>
 
