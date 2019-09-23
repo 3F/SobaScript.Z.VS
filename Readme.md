@@ -10,7 +10,7 @@ https://github.com/3F/SobaScript
 [![release-src](https://img.shields.io/github/release/3F/SobaScript.Z.VS.svg)](https://github.com/3F/SobaScript.Z.VS/releases/latest)
 [![License](https://img.shields.io/badge/License-MIT-74A5C2.svg)](https://github.com/3F/SobaScript.Z.VS/blob/master/License.txt)
 [![NuGet package](https://img.shields.io/nuget/v/SobaScript.Z.VS.svg)](https://www.nuget.org/packages/SobaScript.Z.VS/)
-[![Tests](https://img.shields.io/appveyor/tests/3Fs/SobaScript.Z.VS/master.svg)](https://ci.appveyor.com/project/3Fs/SobaScript.Z.VS/build/tests)
+[![Tests](https://img.shields.io/appveyor/tests/3Fs/sobascript-z-vs/master.svg)](https://ci.appveyor.com/project/3Fs/sobascript-z-vs/build/tests)
 
 [![Build history](https://buildstats.info/appveyor/chart/3Fs/sobascript-z-vs?buildCount=20&showStats=true)](https://ci.appveyor.com/project/3Fs/sobascript-z-vs/history)
 
